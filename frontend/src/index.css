@@ -109,3 +109,18 @@ form label span {
 /* careers details */
 
 /* breadcrumbs */
+
+label {
+	margin-right: 20px;
+}
+
+.row input {
+	padding: 8px;
+	margin: 20px auto;
+	color: black;
+}
+
+button:disabled {
+	background: bisque;
+	color: #bc4123;
+}

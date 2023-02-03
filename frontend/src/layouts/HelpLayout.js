@@ -14,6 +14,7 @@ const HelpLayout = () => {
 			<nav>
 				<NavLink to="faq">Frequently Asked Questions</NavLink>
 				<NavLink to="contact">Contact Us</NavLink>
+				<NavLink to="login-form">Log in</NavLink>
 			</nav>
 			<Outlet />
 		</div>
