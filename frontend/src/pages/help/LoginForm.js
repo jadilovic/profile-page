@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { login } from './util';
+import { login } from '../util';
 
 const LoginForm = () => {
 	const [email, setEmail] = useState('');
