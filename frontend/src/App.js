@@ -4,9 +4,14 @@ import {
 	createRoutesFromElements,
 	RouterProvider,
 } from 'react-router-dom';
+
+import { getCareers } from './pages/util';
+import { careerDetailsLoader } from './pages/careers/CareerDetails';
+
 import RootLayout from './layouts/RootLayout';
 import HelpLayout from './layouts/HelpLayout';
 import CareersLayout from './layouts/CareersLayout';
+
 import About from './pages/About';
 import Home from './pages/Home';
 import Faq from './pages/help/Faq';
@@ -14,7 +19,8 @@ import Contact from './pages/help/Contact';
 import LoginForm from './pages/help/LoginForm';
 import NotFound from './pages/NotFound';
 import Careers from './pages/careers/Careers';
-import { getCareers } from './pages/util';
+import CareerDetails from './pages/careers/CareerDetails';
+import CareersError from './pages/careers/CareersError';
 
 function App() {
 	const router = createBrowserRouter(
@@ -27,8 +33,17 @@ function App() {
 					<Route path="contact" element={<Contact />} />
 					<Route path="login-form" element={<LoginForm />} />
 				</Route>
-				<Route path="careers" element={<CareersLayout />}>
+				<Route
+					path="careers"
+					element={<CareersLayout />}
+					errorElement={<CareersError />}
+				>
 					<Route index element={<Careers />} loader={getCareers} />
+					<Route
+						path=":id"
+						element={<CareerDetails />}
+						loader={careerDetailsLoader}
+					/>
 				</Route>
 				<Route path="*" element={<NotFound />} />
 			</Route>

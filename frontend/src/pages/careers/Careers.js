@@ -8,7 +8,7 @@ const Careers = () => {
 			{data.careers.map((career) => {
 				const { title, location, id } = career;
 				return (
-					<Link to={'/'} key={id}>
+					<Link to={`${id}`} key={id}>
 						<p>{title}</p>
 						<p>{`Based in ${location}`}</p>
 					</Link>

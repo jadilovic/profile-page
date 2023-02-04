@@ -1,7 +1,7 @@
 import careersData from '../data/careersData.json';
 
 const delay = () => {
-	return (0.7 + Math.random() * 2) * 1000;
+	return (0.2 + Math.random() * 2) * 1000;
 };
 
 export const login = ({ email, password }) => {
@@ -24,6 +24,20 @@ export const getCareers = () => {
 				resolve(careersData);
 			} else {
 				reject(new Error('No careers data found'));
+			}
+		}, delay());
+	});
+};
+
+export const getSingleCareer = (id) => {
+	const career = careersData.careers.find((item) => item.id === Number(id));
+	console.log(career);
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			if (career) {
+				resolve(career);
+			} else {
+				reject(new Error('No career details found'));
 			}
 		}, delay());
 	});
