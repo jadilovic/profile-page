@@ -1,3 +1,5 @@
+import Count from './help/Count';
+
 const Home = () => {
 	return (
 		<div className="home">
@@ -23,6 +25,7 @@ const Home = () => {
 				Doloribus odio consequatur explicabo quis accusantium eos. Quo quidem
 				perferendis fuga sunt aperiam ipsum qui porro amet!
 			</p>
+			<Count />
 		</div>
 	);
 };
