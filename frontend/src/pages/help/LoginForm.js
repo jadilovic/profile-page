@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { login } from '../util';
+import Count from './Count';
 
 const LoginForm = () => {
 	const [email, setEmail] = useState('');
@@ -51,6 +52,9 @@ const LoginForm = () => {
 				Log in
 			</button>
 			{error ? <p className="error">{error}</p> : null}
+			<div>
+				<Count />
+			</div>
 		</div>
 	);
 };
